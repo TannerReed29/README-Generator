@@ -1,7 +1,7 @@
-# README Generator
-
+# README Generator 
+ 
 ## Description 
- Project using NodeJS to generate a markdown readme using command line input 
+ Challenge Project using NodeJS to generate a markdown using command line inputs 
 ## Table Of Contents
 [Installation](#installation)
 
@@ -18,15 +18,16 @@
  ## Installation 
  npm install
 ## Usage 
- Project
+ 
 ## License 
- Unlicense
+ 
+ 
 ## Contributors 
  Tanner
 ## Tests 
- NO
+ No
 ## Questions 
  GitHub Username: TannerReed29 
  GitHub Link: https://github.com/TannerReed29 
  Email: tanner29@gmail.com 
- This README was generated using this project
+ 

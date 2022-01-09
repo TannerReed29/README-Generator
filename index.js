@@ -39,7 +39,8 @@ const questions = [
             'Apache 2.0',
             'BSD 3',
             'ISC',
-            'Unlicense'
+            'Unlicense',
+            'None'
         ]
     },
     {
@@ -49,7 +50,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Enter Your Name ',
+        message: 'Enter Your First and Last Name ',
         name: 'Name'
     },
     {
@@ -94,7 +95,7 @@ function writeToFile(fileName, data)
 `;
         const install = `\n ## Installation \n ${data.Install}\n`;
         const usage = `## Usage \n ${data.Usage}\n`;
-        const license = `## License \n ${generate.renderLicenseSection(data.License,data.Name)}\n`;
+        const license = `## License \n ${generate.renderLicenseBadge(data.License)} \n ${generate.renderLicenseSection(data.License,data.Name)}\n`;
         const contr = `## Contributors \n ${data.Contribute}\n`;
         const test = `## Tests \n ${data.Test}\n`;
         const questions = `## Questions \n GitHub Username: ${data.Git} \n GitHub Link: https://github.com/${data.Git} \n Email: ${data.Email} \n ${data.Questions}`;
@@ -110,7 +111,7 @@ function writeToFile(fileName, data)
 function init() {
     inquirer.prompt(questions)
     .then((data) => {
-        const filename = "READMEtest.md";
+        const filename = "README.md";
         writeToFile(filename, data);
     });
 }
