@@ -3,13 +3,18 @@
 ## Description 
  Project using NodeJS to generate a markdown readme using command line input 
 ## Table Of Contents
-        [Installation](#Installation)
-        [Usage](#Usage)
-        [License](#License)
-        [Contributors](#Contributors)
-        [Tests](#Tests)
-        [Questions](#Questions)
-        
+[Installation](#installation)
+
+[Usage](#usage)
+
+[License](#license)
+
+[Contributors](#contributors)
+
+[Tests](#tests)
+
+[Questions](#questions)
+
  ## Installation 
  npm install
 ## Usage 

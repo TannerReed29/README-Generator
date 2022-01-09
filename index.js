@@ -74,14 +74,14 @@ function writeToFile(fileName, data) {
     const title = `# ${data.Title}\n`; 
         const description = `\n## Description \n ${data.Description} \n`;
         const contents = 
-        `## Table Of Contents
-        [Installation](#Installation)
-        [Usage](#Usage)
-        [License](#License)
-        [Contributors](#Contributors)
-        [Tests](#Tests)
-        [Questions](#Questions)
-        `;
+`## Table Of Contents
+[Installation](#installation)\n
+[Usage](#usage)\n
+[License](#license)\n
+[Contributors](#contributors)\n
+[Tests](#tests)\n
+[Questions](#questions)
+`;
         const install = `\n ## Installation \n ${data.Install}\n`;
         const usage = `## Usage \n ${data.Usage}\n`;
         const license = `## License \n ${data.License}\n`;
