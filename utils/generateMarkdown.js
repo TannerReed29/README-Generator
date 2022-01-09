@@ -1,11 +1,13 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-    /* MIT', 
+  // Create a function that returns a license badge based on which license is passed in
+  // If there is no license, return an empty string
+    /* Currently Used Licenses
+    'MIT', 
     'GPL 3.0',
     'Apache 2.0',
     'BSD 3',
     'ISC',
-    'Unlicense */
+    'Unlicense', 
+    */
 function renderLicenseBadge(license) {
   let badge;
   switch (license){
@@ -34,8 +36,8 @@ function renderLicenseBadge(license) {
   return badge;
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+  // Create a function that returns the license link
+  // If there is no license, return an empty string
 function renderLicenseLink(license) {
   let link;
   switch(license){
@@ -65,16 +67,18 @@ function renderLicenseLink(license) {
   return link;
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license, Name) {
+  // Create a function that returns the license section of README
+  // If there is no license, return an empty string
+function renderLicenseSection(license, Name) 
+{
   const currentYear = new Date().getFullYear();
   const Link = renderLicenseLink(license); 
   let section;
     switch(license)
     {
+      // MIT License Info Section            
       case "MIT":
-        section =     
+        section =
 `Copyright ${currentYear} ${Name}
 
 ${Link}
@@ -93,6 +97,8 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMA
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`;
       break;
+
+    // GPL 3 License Info Section
       case "GPL 3.0":
         section =     
 `Copyright ${currentYear} ${Name}
@@ -110,6 +116,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see ${Link}.`;
       break;
+
+    // Apache 2.0 License Info Section
       case "Apache 2.0":
         section =     
 `Copyright ${currentYear} ${Name}
@@ -126,6 +134,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.`;
       break;
+
+    // BSD 3 License Info Section
       case "BSD 3":
         section =     
 `Copyright ${currentYear} ${Name}
@@ -158,6 +168,8 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`;
       break;
+
+    // ISC License Info Section
       case "ISC":
         section =     
 `Copyright ${currentYear} ${Name}
@@ -173,6 +185,8 @@ DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING F
 WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
 WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.`;
       break;
+
+    // The Unlicense License Info Section
       case "Unlicense":
         section =     
 `This is free and unencumbered software released into the public domain.
@@ -200,6 +214,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to ${Link}`;
       break;
+
+    // for empty string
       case "None":
         section = ``;
       break;
