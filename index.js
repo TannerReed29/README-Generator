@@ -49,6 +49,11 @@ const questions = [
     },
     {
         type: 'input',
+        message: 'Enter Your Name ',
+        name: 'Name'
+    },
+    {
+        type: 'input',
         message: 'GitHub Username: ',
         name: 'Git'
     },
@@ -69,9 +74,14 @@ const questions = [
 /* title of my project and 
 sections entitled Description, 
 Table of Contents, Installation, Usage, 
-License, Contributing, Tests, and Questions*/
-function writeToFile(fileName, data) {
-    const title = `# ${data.Title}\n`; 
+License, Contributing, Tests, and Questions
+THEN a badge for that license is added near the top of the 
+README and a notice is added to the section of the README 
+entitled License that explains which license the application 
+is covered under*/
+function writeToFile(fileName, data) 
+{
+    const title = `# ${data.Title} ${generate.renderLicenseBadge(data.License)}\n `; 
         const description = `\n## Description \n ${data.Description} \n`;
         const contents = 
 `## Table Of Contents
@@ -84,7 +94,7 @@ function writeToFile(fileName, data) {
 `;
         const install = `\n ## Installation \n ${data.Install}\n`;
         const usage = `## Usage \n ${data.Usage}\n`;
-        const license = `## License \n ${data.License}\n`;
+        const license = `## License \n ${generate.renderLicenseSection(data.License,data.Name)}\n`;
         const contr = `## Contributors \n ${data.Contribute}\n`;
         const test = `## Tests \n ${data.Test}\n`;
         const questions = `## Questions \n GitHub Username: ${data.Git} \n GitHub Link: https://github.com/${data.Git} \n Email: ${data.Email} \n ${data.Questions}`;
@@ -100,7 +110,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then((data) => {
-        const filename = "README.md";
+        const filename = "READMEtest.md";
         writeToFile(filename, data);
     });
 }
