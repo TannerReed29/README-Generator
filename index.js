@@ -66,6 +66,10 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
+/* title of my project and 
+sections entitled Description, 
+Table of Contents, Installation, Usage, 
+License, Contributing, Tests, and Questions*/
 function writeToFile(fileName, data) {
     const title = `# ${data.Title}\n`; 
         const description = `\n## Description \n ${data.Description} \n`;
@@ -83,7 +87,7 @@ function writeToFile(fileName, data) {
         const license = `## License \n ${data.License}\n`;
         const contr = `## Contributors \n ${data.Contribute}\n`;
         const test = `## Tests \n ${data.Test}\n`;
-        const questions = `## Questions \n GitHub Username: ${data.Git} GitHub Link: https://github.com/${data.Git} \n Email: ${data.Email} \n${data.Questions}`;
+        const questions = `## Questions \n GitHub Username: ${data.Git} \n GitHub Link: https://github.com/${data.Git} \n Email: ${data.Email} \n ${data.Questions}`;
 
         const genmd = title + description + contents + install + usage + license + contr + test + questions;  
 
@@ -96,7 +100,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then((data) => {
-        const filename = "READMEtest.md";
+        const filename = "README.md";
         writeToFile(filename, data);
     });
 }
@@ -105,7 +109,3 @@ function init() {
 init();
 
 
-
-/* title of my project and sections entitled Description, 
-Table of Contents, Installation, Usage, 
-License, Contributing, Tests, and Questions*/
