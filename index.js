@@ -69,6 +69,10 @@ const questions = [
         message: 'Questions about your project: ',
         name: 'Questions'
     },
+    {
+        message: 'Please Remember to set the path for your Screenshot in the README',
+        name: 'Screenshot'
+    }
     
 ];
 
@@ -87,11 +91,12 @@ function writeToFile(fileName, data)
 [License](#license)\n
 [Contributors](#contributors)\n
 [Tests](#tests)\n
-[Questions](#questions)
+[Questions](#questions)\n
+[Screenshots](#screenshots)\n
 `;
 
     // Installation Instructions Section
-    const install = `\n ## Installation \n ${data.Install}\n`;
+    const install = `## Installation \n ${data.Install}\n`;
     // Usage Info Section
     const usage = `## Usage \n ${data.Usage}\n`;
     // Licence section wwith licence badge  and licence section info 
@@ -101,10 +106,24 @@ function writeToFile(fileName, data)
     // Tests Section
     const test = `## Tests \n ${data.Test}\n`;
     // Questions Section Containing GitHub Username, Profile Link, and Email. Followed by Questions  
-    const questions = `## Questions \n GitHub Username: ${data.Git} \n GitHub Link: https://github.com/${data.Git} \n Email: ${data.Email} \n ${data.Questions}`;
+    const questions =  
+`## Questions \n
+
+GitHub Username: ${data.Git} \n
+
+GitHub Link: https://github.com/${data.Git} \n 
+
+Email: ${data.Email} \n 
+
+${data.Questions} \n`;
+    // Screenshots Section
+    const screenshots = 
+`## Screenshots
+
+![Preview](./assets/images/sample.jpg)`
 
     // All markdown sections together 
-    const genmd = title + description + contents + install + usage + license + contr + test + questions;  
+    const genmd = title + description + contents + install + usage + license + contr + test + questions + screenshots;  
 
     fs.writeFile(fileName, genmd , (err) =>
         err ? console.log(err) : console.log('README.md Creation Success!')
@@ -115,8 +134,8 @@ function writeToFile(fileName, data)
 function init() {
     inquirer.prompt(questions)
     .then((data) => {
-        const filename = "README.md";
-        //const filename = "READMEsample.md";
+        //const filename = "README.md";
+        const filename = "READMEsample.md";
         writeToFile(filename, data);
     });
 }
